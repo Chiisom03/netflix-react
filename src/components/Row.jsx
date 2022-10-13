@@ -19,7 +19,7 @@ const Row = ({ title, fetchURL, rowID }) => {
 
   return (
     <>
-      <h2 className="font-bold md:text-xl p-4">{title}</h2>
+      <h2 className="font-bold md:text-xl p-4 select-none">{title}</h2>
       <div className="relative flex items-center group">
         <MdChevronLeft
           className="bg-white rounded absolute left-4 opacity-50 hover:opacity-100 text-black z-10 hidden group-hover:block"
@@ -31,7 +31,7 @@ const Row = ({ title, fetchURL, rowID }) => {
           className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
         >
           {movies.map((movie, id) => (
-            <Movie movie={movie} id={id} />
+            <Movie movie={movie} key={id}/>
           ))}
         </div>
         <MdChevronRight
