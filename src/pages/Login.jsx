@@ -32,7 +32,7 @@ const Login = () => {
                   autoComplete="current-password"
                 />
                 <button className="bg-red-600 py-3 rounded mt-8 mb-2">
-                  Sign up
+                  Sign in
                 </button>
                 <div className="flex justify-between items-center">
                   <p>

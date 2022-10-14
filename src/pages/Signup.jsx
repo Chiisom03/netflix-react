@@ -34,13 +34,7 @@ const Signup = () => {
                 <button className="bg-red-600 py-3 rounded mt-8 mb-2">
                   Sign up
                 </button>
-                <div className="flex justify-between items-center">
-                  <p>
-                    <input type="checkbox" name="Remember me" id="" />
-                    &nbsp;Remember me
-                  </p>
-                  <Link to="/">Need help?</Link>
-                </div>
+               
 
                 <p className="mt-12">
                   Have an account?&nbsp;
