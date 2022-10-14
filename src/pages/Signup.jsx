@@ -1,7 +1,21 @@
-import React from "react";
+import { async } from "@firebase/util";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { UserAuth } from "../context/authContext";
 
 const Signup = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { user, signup } = UserAuth();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await signup(email, password);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div className="w-full h-screen">
@@ -16,16 +30,18 @@ const Signup = () => {
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="text-3xl font-bold">Sign Up</h1>
               <form
-                action=""
+                onSubmit={handleSubmit}
                 className="w-full flex flex-col my-4 justify-between"
               >
                 <input
+                  onChange={(e) => setEmail(e.target.value)}
                   type="text"
                   className="p-2 rounded bg-gray-700 my-2"
                   placeholder="Email or phone number"
                   autoComplete="email"
                 />
                 <input
+                  onChange={(e) => setPassword(e.target.value)}
                   type="text"
                   className="p-2 rounded bg-gray-700 my-2"
                   placeholder="Password"
@@ -34,7 +50,6 @@ const Signup = () => {
                 <button className="bg-red-600 py-3 rounded mt-8 mb-2">
                   Sign up
                 </button>
-               
 
                 <p className="mt-12">
                   Have an account?&nbsp;
