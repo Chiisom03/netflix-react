@@ -43,9 +43,9 @@ const Signup = () => {
                 </div>
 
                 <p className="mt-12">
-                  New to Netflix?
-                  <Link to="/" className="font-bold">
-                    Sign up now
+                  Have an account?&nbsp;
+                  <Link to="/login" className="font-bold">
+                    Sign In now
                   </Link>
                 </p>
               </form>
