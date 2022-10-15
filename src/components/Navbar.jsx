@@ -4,13 +4,13 @@ import { UserAuth } from "../context/authContext";
 import { errorPrefix } from "@firebase/util";
 
 const Navbar = () => {
-  const { user, logOut } = UserAuth();
+  const { user, logout } = UserAuth();
   const navigate = useNavigate();
 
   const handleLogout = async () => {
     try {
-      await logOut();
-      navigate("/");
+      await logout();
+      navigate("/login");
     } catch (error) {
       console.log(errorPrefix.toString());
     }

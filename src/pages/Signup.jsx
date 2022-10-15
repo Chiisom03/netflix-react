@@ -5,7 +5,7 @@ import { UserAuth } from "../context/authContext";
 const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { user, signUp } = UserAuth();
+  const { signUp } = UserAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -13,11 +13,12 @@ const Signup = () => {
     console.log("something happened");
     try {
       await signUp(email, password);
-        navigate("/");
+      navigate("/");
     } catch (error) {
       console.log(error);
     }
   };
+
   return (
     <>
       <div className="w-full h-screen">
@@ -44,7 +45,7 @@ const Signup = () => {
                 />
                 <input
                   onChange={(e) => setPassword(e.target.value)}
-                  type="text"
+                  type="password"
                   className="p-2 rounded bg-gray-700 my-2"
                   placeholder="Password"
                   autoComplete="current-password"
