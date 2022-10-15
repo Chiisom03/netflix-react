@@ -13,7 +13,7 @@ const Signup = () => {
     console.log("something happened");
     try {
       await signUp(email, password);
-      //   navigate("/");
+        navigate("/");
     } catch (error) {
       console.log(error);
     }
@@ -28,7 +28,7 @@ const Signup = () => {
         />
         <div className="bg-black/50 fixed top-0 left-0 w-full h-screen"></div>
         <div className="fixed w-full px-4 py-24 z-50">
-          <div className="max-w-[435px] h-[600px] mx-auto bg-black/75 rounded-lg drop-shadow-md backdrop-blur-lg">
+          <div className="max-w-[435px] h-[600px] mx-auto bg-black/60 rounded-lg drop-shadow-md backdrop-blur-lg">
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="text-3xl font-bold">Sign Up</h1>
               <form

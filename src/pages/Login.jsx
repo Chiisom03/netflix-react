@@ -1,7 +1,23 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UserAuth } from "../context/authContext";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { user, signUp } = UserAuth();
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log("something happened");
+    try {
+      await signUp(email, password);
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div className="w-full h-screen">
@@ -12,7 +28,7 @@ const Login = () => {
         />
         <div className="bg-black/50 fixed top-0 left-0 w-full h-screen"></div>
         <div className="fixed w-full px-4 py-24 z-50">
-          <div className="max-w-[435px] h-[600px] mx-auto bg-black/75 rounded-lg drop-shadow-md backdrop-blur-lg">
+          <div className="max-w-[435px] h-[600px] mx-auto bg-black/60 rounded-lg drop-shadow-md backdrop-blur-lg">
             <div className="max-w-[320px] mx-auto py-16">
               <h1 className="text-3xl font-bold">Sign In</h1>
               <form
