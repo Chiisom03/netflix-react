@@ -32,9 +32,6 @@ const SavedMovies = () => {
   };
   return (
     <>
-      {/* <h2 className="font-bold md:text-xl p-4 select-none bg-red-600">
-        Favorites
-      </h2> */}
       <div className="relative flex items-center group">
         <MdChevronLeft
           className="bg-white rounded absolute left-4 opacity-50 hover:opacity-100 text-black z-10 hidden group-hover:block"
