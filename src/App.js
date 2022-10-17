@@ -20,7 +20,7 @@ function App() {
             path="/account"
             element={
               <ProtectedRoute>
-                {" "}
+                {/* {" "} */}
                 <Account />
               </ProtectedRoute>
             }
