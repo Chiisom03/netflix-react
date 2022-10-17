@@ -15,7 +15,7 @@ const SavedMovies = () => {
 
   useEffect(() => {
     onSnapshot(doc(db, "users", `${user?.email}`), (docs) => {
-      setMovies(docs.data()?.savedMovie);
+      setMovies(docs.data()?.savedMovies);
     });
   }, [user?.email]);
 
@@ -24,7 +24,7 @@ const SavedMovies = () => {
     try {
       const result = movies.filter((m) => m.id !== movieID);
       await updateDoc(movieRef, {
-        savedMovie: result,
+        savedMovies: result,
       });
     } catch (error) {
       console.log(error);
